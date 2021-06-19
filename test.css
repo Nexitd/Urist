@@ -1,0 +1,166 @@
+/* 1 */
+h1 {
+    color: red;
+}
+
+table, tr, th, td {
+    border: 1px solid #000;
+    text-align: center;
+}
+
+td {
+    padding: 15px;
+}
+
+/* 2 */
+
+#block {
+    margin: 5px;
+    padding: 10px;
+    border: 3px solid #000;
+    height: 100px;
+    width: 150px;
+}
+
+/* 3 */
+
+.block {
+    margin: 5px;
+    padding: 10px;
+    border: 3px solid #000;
+    height: 100px;
+    width: 150px;
+}
+
+/* 4 */
+
+[data-id="link"] {
+    width: 150px;
+    height: 100px;
+    margin: 20px;
+    background-color: blue;
+}
+
+div[data-id="link"] + button {
+    width: 70px;
+    line-height: 40px;
+    font-weight: 600;
+    font-size: 16px;
+    color: red;
+}
+
+/* 5 */
+
+.parent > .child {
+    border: 10px solid cyan;
+    margin: 5px;
+}
+
+
+/* 6 */
+
+.parent + .sibling {
+    margin-top: 50px;
+    border: 10px solid cyan;
+}
+
+/* 10 */
+
+/* .header {
+    background-color: green;
+}
+
+.menu {
+    background-color: yellow;
+}
+
+.content {
+    background-color: purple;
+}
+
+.footer {
+    background-color: blue;
+} */
+
+
+/* 11 */
+
+/* .header {
+    background-color: green;
+    width: 100%;
+}
+
+.menu {
+    background-color: yellow;
+    width: 40%;
+    float: left;
+}
+
+.content {
+    background-color: purple;
+    width: 60%;
+    float: right;
+}
+
+.footer {
+    background-color: blue;
+    width: 100%;
+} */
+
+/* 12 */
+
+/* .main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cont {
+    display: flex;
+    flex-direction: row;
+}
+
+.header {
+    background-color: green;
+}
+
+.menu {
+    background-color: yellow;
+    flex: 2;
+}
+
+.content {
+    background-color: purple;
+    flex: 3;
+}
+
+.footer {
+    background-color: blue;
+} */
+
+
+.main {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.header {
+    background-color: green;
+}
+
+.cont {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.menu {
+    background-color: yellow;
+}
+
+.content {
+    background-color: purple;
+}
+
+.footer {
+    background-color: blue;
+}
