@@ -1,225 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Списание долгов</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Списание долгов</title>
+        <link rel="stylesheet" href="./styles/style.css" />
 
-    <link rel="stylesheet" href="./styles/style.css">
-</head>
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+            integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+            crossorigin=""
+        />
+    </head>
 
-<body>
-    <header>
-        <div class="header__container">
-            <nav>
-                <div class="nav">
-                    <div class="logo">
-                        <img src="./assets/images/header/image 2.png" alt="">
+    <body>
+        <header>
+            <div class="header__container">
+                <nav>
+                    <div class="nav">
+                        <div class="logo">
+                            <img
+                                src="./assets/images/header/image 2.png"
+                                alt=""
+                            />
+                        </div>
+                        <div class="nav__menu">
+                            <ul class="nav__list">
+                                <li class="list__item">
+                                    <a
+                                        href="#about"
+                                        class="item__link anchor__link"
+                                    >
+                                        О банкротстве
+                                    </a>
+                                </li>
+                                <li class="list__item">
+                                    <a
+                                        href="#services"
+                                        class="item__link anchor__link"
+                                    >
+                                        Услуга
+                                    </a>
+                                </li>
+                                <li class="list__item">
+                                    <a
+                                        href="#contacts"
+                                        class="item__link anchor__link"
+                                    >
+                                        Контакты
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="nav__phone">
+                            <a href="tel:+7(495)215-17-77" class="phone__link"
+                                >+7(495)215-17-77</a
+                            >
+                        </div>
                     </div>
-                    <div class="nav__menu">
-                        <ul class="nav__list">
-                            <li class="list__item">
-                                <a href="" class="item__link">
-                                    О банкротстве
-                                </a>
-                            </li>
-                            <li class="list__item">
-                                <a href="" class="item__link">
-                                    Услуга
-                                </a>
-                            </li>
-                            <li class="list__item">
-                                <a href="" class="item__link">
-                                    Контакты
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="nav__phone">
-                        <a href="tel:+7(495)215-17-77" class="phone__link">+7(495)215-17-77</a>
-                    </div>
+                </nav>
+                <div class="header__container_info">
+                    <h1 class="header__info_title">Попрощайтесь с долгами</h1>
+                    <h2 class="header__info_subtitle">
+                        Бесплатная консультацияот ведущих юристов
+                    </h2>
+                    <button class="header__info_btn" id="discard-debt">
+                        СПИСАТЬ ДОЛГИ
+                    </button>
                 </div>
-            </nav>
-            <div class="header__container_info">
-                <h1 class="header__info_title">Попрощайтесь с долгами</h1>
-                <h2 class="header__info_subtitle">Бесплатная консультацияот ведущих юристов</h2>
-                <button class="header__info_btn">СПИСАТЬ ДОЛГИ</button>
-            </div>
-            <div class="header__container_data">
-                <ul class="data__list">
-                    <li class="data__list_item">
-                        За 2019г:
-                    </li>
-                    <li class="data__list_item">
-                        375 консультаций
-                    </li>
-                    <li class="data__list_item">
-                        168 довольных клиентов
-                    </li>
-                    <li class="data__list_item">
-                        списали 889 млн.рублей
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </header>
-
-    <div class="wrapper">
-        <div class="section">
-            <div class="section__block">
-                <div class="section__block_head">
-                    <div></div>
-                    <h2 class="section__block_title">Ситуации, когда мы поможем</h2>
-                </div>
-                <div class="section__block_body">
-                    <ul class="section__block_list">
-                        <li class="section__block_item">
-                            просрочки по кредитам в банках, МФО, ломбардах
-                        </li>
-                        <li class="section__block_item">
-                            непосильные ежемесячные платежи
-                        </li>
-                        <li class="section__block_item">
-                            долги по ЖКХ, налогам, штрафы
-                        </li>
-                        <li class="section__block_item">
-                            на вас свалился долг, как на поручителя
-                        </li>
-                        <li class="section__block_item">
-                            долги перед физическими лицами
-                        </li>
-                        <li class="section__block_item">
-                            арестовано имущество
-                        </li>
-                        <li class="section__block_item">
-                            приставы удерживают деньги с дохода
-                        </li>
-                        <li class="section__block_item">
-                            платите по кредитам, но долг не уменьшается
-                        </li>
+                <div class="header__container_data">
+                    <ul class="data__list">
+                        <li class="data__list_item">За 2019г:</li>
+                        <li class="data__list_item">375 консультаций</li>
+                        <li class="data__list_item">168 довольных клиентов</li>
+                        <li class="data__list_item">списали 889 млн.рублей</li>
                     </ul>
                 </div>
             </div>
-            <div class="section__block">
-                <img src="./assets/images/wrapper/фотка.jpg" alt="">
-                <div class="blue__block"></div>
-            </div>
-        </div>
-    </div>
+        </header>
 
-    <div class="cards">
-        <div class="cards__head">
-            <div class="section__block_head">
-                <div></div>
-                <h2 class="section__block_title">Как списать долги</h2>
-            </div>
-        </div>
-        <div class="cards__body">
-            <div class="cards__body_item">
-                <p class="cards__body_text">Ваши долги списываются в полном объёме. Любые попытки кредиторов в
-                    дальнейшем взыскать с вас средства приравниваются к вымогательству.</p>
-            </div>
-            <div class="cards__body_item">
-                <p class="cards__body_text">Закон гарантирует сохранение единственного жилья, вне зависимости от его
-                    размеров. Будьте спокойны на этот счёт.</p>
-            </div>
-            <div class="cards__body_item">
-                <p class="cards__body_text"> С вас снимаются все ограничения - блокировка счетов, выезд за рубеж</p>
-            </div>
-            <div class="cards__body_item">
-                <p class="cards__body_text">Прекращаются звонки о взыскании задолженности и исключены любые выезды. От
-                    кредиторов в процедуре участвуют юристы.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="icons">
-        <div class="icons__head">
-            <div class="section__block_head">
-                <div></div>
-                <h2 class="section__block_title">Как списать долги</h2>
-            </div>
-        </div>
-        <div class="icons__body">
-            <div class="icons__body_item">
-                <img src="./assets/images/icons/support 1.svg" alt="">
-                <p class="icons__text">
-                    Записываетесь на <a href="">консультацию</a>
-                </p>
-            </div>
-            <div class="icons__body_item">
-                <img src="./assets/images/icons/search 1.svg" alt="">
-                <p class="icons__text">
-                    Получаете бесплатный анализ вашей ситуации
-                </p>
-            </div>
-            <div class="icons__body_item">
-                <img src="./assets/images/icons/doc.svg" alt="">
-                <p class="icons__text">
-                    Заключаете с нами договор
-                </p>
-            </div>
-            <div class="icons__body_item">
-                <img src="./assets/images/icons/award 1.svg" alt="">
-                <p class="icons__text">
-                    Прощаетесь с долгами
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div class="map">
-        <div class="map__head">
-            <div class="section__block_head">
-                <div></div>
-                <h2 class="section__block_title">Как списать долги</h2>
-            </div>
-        </div>
-        <div class="map__body">
-            <div class="map__body_block">
-                <div class="map__block_item">
-                    <img src="./assets/images/map/maps-and-flags 1.svg" alt="">
-                    <div class="map__item_info">
-                        <p class="map__info_text">м. Смоленская, ул. Арбат, 54/2с1</p>
-                        <p class="map__info_text">м. Ольховая, с.п. Сосенское,
-                            д. Сосенки, ул. Сосновая, 1Б</p>
+        <div class="wrapper">
+            <div class="section">
+                <div class="section__block">
+                    <div class="section__block_head">
+                        <div></div>
+                        <h2 class="section__block_title">
+                            Ситуации, когда мы поможем
+                        </h2>
+                    </div>
+                    <div class="section__block_body">
+                        <ul class="section__block_list">
+                            <li class="section__block_item">
+                                просрочки по кредитам в банках, МФО, ломбардах
+                            </li>
+                            <li class="section__block_item">
+                                непосильные ежемесячные платежи
+                            </li>
+                            <li class="section__block_item">
+                                долги по ЖКХ, налогам, штрафы
+                            </li>
+                            <li class="section__block_item">
+                                на вас свалился долг, как на поручителя
+                            </li>
+                            <li class="section__block_item">
+                                долги перед физическими лицами
+                            </li>
+                            <li class="section__block_item">
+                                арестовано имущество
+                            </li>
+                            <li class="section__block_item">
+                                приставы удерживают деньги с дохода
+                            </li>
+                            <li class="section__block_item">
+                                платите по кредитам, но долг не уменьшается
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="map__block_item">
-                    <img src="./assets/images/map/call-answer 1.svg" alt="">
-                    <div class="map__item_info">
-                        <a href="tel:+7(495)215-17-77" class="map__info_text">+7(495)215-17-77</a>
-                        <a href="tel:+7(499)110-17-37" class="map__info_text">+7(499)110-17-37</a>
-                    </div>
+                <div class="section__block">
+                    <img src="./assets/images/wrapper/фотка.jpg" alt="" />
+                    <div class="blue__block"></div>
                 </div>
-                <div class="map__block_item">
-                    <img src="./assets/images/map/email 1.svg" alt="">
-                    <div class="map__item_info">
-                        <a href="mailto:info@2151777.ru" class="map__info_text">info@2151777.ru</a>
-                    </div>
-                </div>
-            </div>
-            <div class="map__body_block">
-                <img src="./assets/images/map/карта.png" alt="">
             </div>
         </div>
-    </div>
 
-    <div class="contact">
-        <form action="">
-            <h2 class="form__title">Запись на консультацию</h2>
-            <label for="name">Имя</label>
-            <input type="text" id="name">
-            <label for="phone">Телефон</label>
-            <input type="text" id="phone">
-            <button class="form__btn">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</button>
-        </form>
-    </div>
+        <div class="cards" id="about">
+            <div class="cards__head">
+                <div class="section__block_head">
+                    <div></div>
+                    <h2 class="section__block_title">Как списать долги</h2>
+                </div>
+            </div>
+            <div class="cards__body">
+                <div class="cards__body_item">
+                    <p class="cards__body_text">
+                        Ваши долги списываются в полном объёме. Любые попытки
+                        кредиторов в дальнейшем взыскать с вас средства
+                        приравниваются к вымогательству.
+                    </p>
+                </div>
+                <div class="cards__body_item">
+                    <p class="cards__body_text">
+                        Закон гарантирует сохранение единственного жилья, вне
+                        зависимости от его размеров. Будьте спокойны на этот
+                        счёт.
+                    </p>
+                </div>
+                <div class="cards__body_item">
+                    <p class="cards__body_text">
+                        С вас снимаются все ограничения - блокировка счетов,
+                        выезд за рубеж
+                    </p>
+                </div>
+                <div class="cards__body_item">
+                    <p class="cards__body_text">
+                        Прекращаются звонки о взыскании задолженности и
+                        исключены любые выезды. От кредиторов в процедуре
+                        участвуют юристы.
+                    </p>
+                </div>
+            </div>
+        </div>
 
-    <footer>
-        <p class="footer__text">© Все права защищены. 2019-2020 ОА «ФЮС»</p>
-    </footer>
-</body>
+        <div class="icons" id="services">
+            <div class="icons__head">
+                <div class="section__block_head">
+                    <div></div>
+                    <h2 class="section__block_title">Что нужно сделать</h2>
+                </div>
+            </div>
+            <div class="icons__body">
+                <div class="icons__body_item">
+                    <img src="./assets/images/icons/support 1.svg" alt="" />
+                    <p class="icons__text">
+                        Записываетесь на
+                        <a href="#get-service" class="anchor__link"
+                            >консультацию</a
+                        >
+                    </p>
+                </div>
+                <div class="icons__body_item">
+                    <img src="./assets/images/icons/search 1.svg" alt="" />
+                    <p class="icons__text">
+                        Получаете бесплатный анализ вашей ситуации
+                    </p>
+                </div>
+                <div class="icons__body_item">
+                    <img src="./assets/images/icons/doc.svg" alt="" />
+                    <p class="icons__text">Заключаете с нами договор</p>
+                </div>
+                <div class="icons__body_item">
+                    <img src="./assets/images/icons/award 1.svg" alt="" />
+                    <p class="icons__text">Прощаетесь с долгами</p>
+                </div>
+            </div>
+        </div>
 
+        <div class="map" id="contacts">
+            <div class="map__head">
+                <div class="section__block_head">
+                    <div></div>
+                    <h2 class="section__block_title">Связаться с нами</h2>
+                </div>
+            </div>
+            <div class="map__body">
+                <div class="map__body_block">
+                    <div class="map__block_item">
+                        <img
+                            src="./assets/images/map/maps-and-flags 1.svg"
+                            alt=""
+                        />
+                        <div class="map__item_info">
+                            <p class="map__info_text">
+                                м. Смоленская, ул. Арбат, 54/2с1
+                            </p>
+                            <p class="map__info_text">
+                                м. Ольховая, с.п. Сосенское, д. Сосенки, ул.
+                                Сосновая, 1Б
+                            </p>
+                        </div>
+                    </div>
+                    <div class="map__block_item">
+                        <img
+                            src="./assets/images/map/call-answer 1.svg"
+                            alt=""
+                        />
+                        <div class="map__item_info">
+                            <a
+                                href="tel:+7(495)215-17-77"
+                                class="map__info_text"
+                                >+7(495)215-17-77</a
+                            >
+                            <a
+                                href="tel:+7(499)110-17-37"
+                                class="map__info_text"
+                                >+7(499)110-17-37</a
+                            >
+                        </div>
+                    </div>
+                    <div class="map__block_item">
+                        <img src="./assets/images/map/email 1.svg" alt="" />
+                        <div class="map__item_info">
+                            <a
+                                href="mailto:info@2151777.ru"
+                                class="map__info_text"
+                                >info@2151777.ru</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <div id="map" style="margin-left: 50px">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d577325.3484153093!2d36.82509701532533!3d55.58152434359989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54afc73d4b0c9%3A0x3d44d6cc5757cf4c!2z0JzQvtGB0LrQstCw!5e0!3m2!1sru!2sru!4v1624359171032!5m2!1sru!2sru"
+                        width="600"
+                        height="450"
+                        style="border: 0"
+                        allowfullscreen=""
+                        loading="lazy"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact" id="get-service">
+            <form action="">
+                <h2 class="form__title">Запись на консультацию</h2>
+                <label for="name">Имя</label>
+                <input
+                    type="text"
+                    id="name"
+                    minlength="2"
+                    placeholder="Имя"
+                    pattern="[A-Za-zА-Яа-яЁё]*"
+                    required
+                />
+                <label for="phone">Телефон</label>
+                <input
+                    type="text"
+                    id="phone"
+                    minlength="16"
+                    pattern="\+7\s?[\(]{0,1}9[0-9]{2}[\)]{0,1}\s?\d{3}[-]{0,1}\d{2}[-]{0,1}\d{2}"
+                    placeholder="+7 (928) 111-11-11"
+                    required
+                />
+                <button class="form__btn">ПОЛУЧИТЬ КОНСУЛЬТАЦИЮ</button>
+            </form>
+        </div>
+
+        <footer>
+            <p class="footer__text">© Все права защищены. 2019-2020 ОА «ФЮС»</p>
+        </footer>
+
+        <script src="./scripts/anchor.js"></script>
+        <script src="./scripts/form.js"></script>
+    </body>
 </html>
